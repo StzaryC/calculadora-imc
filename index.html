@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="shortcut icon" href="favicon.png" type="image/x-icon">
+    <title>Calculadora IMC</title>
+</head>
+<body>
+    <div id="app">
+        <h1>Calculadora de <br> Indice de Masa Corporal</h1>
+		<div class="datos_Usuario">
+			<div class="datos">
+				<label for="">Peso (kg)</label>
+				<input type="number" v-model="peso" value=">40" />
+				<label for="">Altura (cm)</label>
+				<input type="number" v-model="altura" />
+			</div>
+			<div class="action">
+				<button @click="IMC">Calcular IMC</button>
+			</div>
+		</div>
+
+		<div class="valoracion_Datos">
+			<div class="table">
+				<h2>¿Cómo se interpreta el IMC para adultos?</h2>
+				<p>
+					Para adultos de 20 años o más, el IMC se interpreta usando categorías de
+					estado de peso estándar. Estas categorías son iguales para hombres y
+					mujeres de todos los tipos de cuerpo y edades.
+					<br />
+					<br />
+					Las categorías de estado de peso estándar asociadas con los rangos de IMC
+					para adultos se muestran en la siguiente tabla.
+				</p>
+				<div class="grid">
+					<div class="imc">IMC</div>
+					<div class="peso">Peso</div>
+					<div class="imc_pts">
+						<span class="bajoPeso">Por debajo de 18.5</span>
+						<br />
+						<span class="normalPeso">18.5 a 24.9</span>
+						<br />
+						<span class="sobrePeso">25.0 a 29.9</span>
+						<br />
+						<span class="Obesidad">30.0 o más</span>
+						<br />
+					</div>
+					<div class="imc_estado">
+						<span class="bajoPeso">Bajo peso</span>
+						<br />
+						<span class="normalPeso">Normal</span>
+						<br />
+						<span class="sobrePeso">Sobrepeso</span>
+						<br />
+						<span class="Obesidad">Obesidad</span>
+						<br />
+					</div>
+				</div>
+			</div>
+			<p id="tuPeso">
+				Tu peso es:
+				<b>{{ peso }} kg</b>
+			</p>
+			<p id="tuAltura">
+				Tu altura es:
+				<b>{{ altura }} cm</b>
+			</p>
+			<p id="tuIMC">
+				Tu IMC (Indice de Masa Corporal) es:
+				<br />
+				<b>{{ pesoIdeal }}</b>
+			</p>
+		</div>
+	</div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>
